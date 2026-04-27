@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundamentos de Redes</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #1e293b;
+        margin: 0;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    header {
+        text-align: center;
+        color: white;
+        margin-bottom: 30px;
+    }
+
+    header h1 {
+        font-size: 38px;
+    }
+
+    .section {
+        background: #e2e8f0;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        color: #1d4ed8;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    th {
+        background: #1d4ed8;
+        color: white;
+    }
+
+    .quiz {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .option {
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .option:hover {
+        background: #f1f5f9;
+    }
+
+    .correct {
+        background: #bbf7d0;
+    }
+
+    .wrong {
+        background: #fecaca;
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 10px;
+        border: none;
+        background: #16a34a;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <h1>🌐 Redes de Computadores</h1>
+    <p>Entenda como dispositivos se conectam e trocam informações</p>
+</header>
+
+<div class="section">
+    <h2>📌 Conceito de Rede</h2>
+    <p>Uma rede de computadores é formada por dispositivos interligados com o objetivo de compartilhar dados e recursos, como arquivos, impressoras e acesso à internet.</p>
+
+    <h3>Principais elementos:</h3>
+    <ul>
+        <li><b>Dispositivos:</b> computadores, celulares e servidores</li>
+        <li><b>Meios:</b> cabos ou conexões sem fio</li>
+        <li><b>Equipamentos:</b> roteadores e switches</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>📊 Tipos de Redes</h2>
+
+    <table>
+        <tr>
+            <th>Sigla</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+        </tr>
+
+        <tr>
+            <td>PAN</td>
+            <td>Personal Area Network</td>
+            <td>Conexões pessoais de curto alcance</td>
+        </tr>
+
+        <tr>
+            <td>LAN</td>
+            <td>Local Area Network</td>
+            <td>Rede local (casa ou empresa)</td>
+        </tr>
+
+        <tr>
+            <td>MAN</td>
+            <td>Metropolitan Area Network</td>
+            <td>Rede que cobre uma cidade</td>
+        </tr>
+
+        <tr>
+            <td>WAN</td>
+            <td>Wide Area Network</td>
+            <td>Rede de longa distância (Internet)</td>
+        </tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>🔗 Topologias</h2>
+    <p>Define como os dispositivos estão conectados:</p>
+    <ul>
+        <li><b>Estrela:</b> todos conectados a um ponto central</li>
+        <li><b>Malha:</b> vários caminhos entre os dispositivos</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>📚 Modelo OSI</h2>
+    <p>Divide a comunicação em 7 níveis:</p>
+
+    <ol>
+        <li>Física</li>
+        <li>Enlace</li>
+        <li>Rede</li>
+        <li>Transporte</li>
+        <li>Sessão</li>
+        <li>Apresentação</li>
+        <li>Aplicação</li>
+    </ol>
+</div>
+
+<div class="section">
+    <h2>🌍 Protocolos</h2>
+    <ul>
+        <li><b>IP:</b> identifica dispositivos</li>
+        <li><b>TCP:</b> garante entrega correta</li>
+        <li><b>DNS:</b> traduz nomes para IP</li>
+        <li><b>HTTP/HTTPS:</b> carregamento de sites</li>
+    </ul>
+</div>
+
+<div class="section quiz">
+    <h2>🧠 Quiz</h2>
+
+    <p>1. Uma rede dentro de uma empresa é:</p>
+    <div class="option" onclick="check(this,false)">PAN</div>
+    <div class="option" onclick="check(this,true)">LAN</div>
+    <div class="option" onclick="check(this,false)">WAN</div>
+
+    <p>2. Qual camada cuida do IP?</p>
+    <div class="option" onclick="check(this,false)">Física</div>
+    <div class="option" onclick="check(this,true)">Rede</div>
+    <div class="option" onclick="check(this,false)">Aplicação</div>
+
+</div>
+
+<div class="section">
+    <h2>💬 Feedback</h2>
+
+    <p>Dê uma nota:</p>
+    <input type="radio" name="nota">1
+    <input type="radio" name="nota">2
+    <input type="radio" name="nota">3
+    <input type="radio" name="nota">4
+    <input type="radio" name="nota">5
+
+    <br><br>
+
+    <textarea placeholder="Sugestões..." style="width:100%;"></textarea>
+    <br>
+    <button onclick="enviar()">Enviar</button>
+</div>
+
+</div>
+
+<script>
+function check(el, correct){
+    if(correct){
+        el.classList.add("correct");
+    } else {
+        el.classList.add("wrong");
+    }
+}
+
+function enviar(){
+    alert("Feedback enviado!");
+}
+</script>
+
+</body>
+</html>
