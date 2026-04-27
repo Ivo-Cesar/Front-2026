@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Caixa livre</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <style> 
+            
+            :root {
+                --laranja-pdv: #fd7e14;
+                --preto-pdv: #1a1a1a;
+                --cinza-painel: #2d2d2e;
+            }
+
+            body {
+                background-color: var(--preto-pdv) !important;
+                color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .topo {
+                background-color: var(--laranja-pdv);
+                color: var(--preto-pdv);
+                text-align: center;
+                font-size: 48px;
+                font-weight: 900;
+                text-transform: uppercase;
+                border: 6px solid white;
+                border-radius: 10px;
+                padding: 10px;
+                margin-bottom: 25px;
+                box-shadow: 0 4px 15px rgba(253, 126, 20, 0.3);
+            }
+
+            .painel {
+                background: var(--cinza-painel);
+                padding: 20px;
+                margin-bottom: 15px;
+                border: 2px solid #444;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            }
+
+            .painel label {
+                color: var(--laranja-pdv);
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 14px;
+                margin-bottom: 8px;
+                display: block;
+            }
+
+            /* Estilização dos Inputs */
+            .form-control {
+                background-color: #111 !important;
+                border: 1px solid #555 !important;
+                color: white !important;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .form-control:focus {
+                border-color: var(--laranja-pdv) !important;
+                box-shadow: 0 0 0 0.25rem rgba(253, 126, 20, 0.25) !important;
+            }
+
+            .display-total {
+                font-size: 40px;
+                font-weight: bold;
+                color: #fff;
+                text-align: right;
+            }
+
+            .badge-laranja {
+                background-color: var(--laranja-pdv);
+                color: var(--preto-pdv);
+                padding: 10px 20px;
+            }
+
+            /* Botão customizado */
+            .btn-add {
+                background-color: var(--laranja-pdv);
+                border: none;
+                color: var(--preto-pdv);
+                font-weight: bold;
+                font-size: 20px;
+                padding: 15px;
+                transition: 0.3s;
+            }
+
+            .btn-add:hover {
+                background-color: #ff9500;
+                transform: scale(1.02);
+            }
+
+            .lista {
+                background-color: var(--cinza-painel);
+                border: 1px solid #444;
+                min-height: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="Alert"><br></div>
+
+        <div class="container mt-3">
+            <div class="topo">Caixa Livre</div>
+        
+            <div class="row mt3">
+                <div class="col-md-7">
+                    <h3 class="text-white"><span class="badge badge-laranja "> SUA COMPRA 🛒</span></h3>
+                    <ul id="lista" class="list-group lista"></ul>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="painel" > Total: R$ <span id="total">0.00</span></div>
+                    
+                    <div class="painel">
+                        <label> Código de Barras </label>
+                        <input type="text" id="cod" class="form-control"/>
+                    </div>
+
+                    <div class="painel">
+                        <label > Quantidade </label>
+                        <input type="text" id="qtd" class="form-control" value="1"/>
+                    </div>
+                    
+                    <div class="painel">
+                        <label> Quantidade X Valor </label>
+                        <div class="alert alert-dark mb-0 py-2 border-secondary" role="alert"><span id="qtdXvl">0.00</span></div>
+                    </div>
+
+                    <button class="btn btn-add w-100 shadow" onclick="addProduto()">Adicionar Produto</button>
+                </div> 
+
+            </div>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="scripto.js"></script>
+    </body>
+</html>
